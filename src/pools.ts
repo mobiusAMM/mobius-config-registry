@@ -27,69 +27,11 @@ import {
   WETH,
   WETH1,
 } from "@dahlia-labs/celo-tokens";
-import type { Percent } from "@dahlia-labs/token-utils";
 import { Token, TokenAmount } from "@dahlia-labs/token-utils";
 import BigNumber from "bignumber.js";
-import type JSBI from "jsbi";
 
-export type Fees = {
-  trade: Percent;
-  admin: Percent;
-  deposit: Percent;
-  withdraw: Percent;
-};
-
-/**
- * Static definition of an exchange.
- */
-export interface IExchange {
-  address: string;
-  lpToken: Token;
-  tokens: readonly [Token, Token];
-}
-
-/**
- * Info loaded from the exchange. This is used by the calculator.
- */
-export interface IExchangeInfo {
-  ampFactor: JSBI;
-  fees: Fees;
-  lpTotalSupply: TokenAmount;
-  reserves: readonly [TokenAmount, TokenAmount];
-}
-
-export interface IGauge {
-  address: string;
-  additionalRewards: TokenAmount[];
-}
-
-export interface Volume {
-  volume: {
-    total: number;
-    day: number;
-    week: number;
-  } | null;
-}
-
-export enum Coins {
-  Bitcoin,
-  Ether,
-  USD,
-  Celo,
-  Eur,
-}
-
-export enum WarningType {
-  POOF = "poof",
-}
-
-export interface Peg {
-  coin: Coins;
-  symbol: string;
-  position: "before" | "after";
-  decimals: number;
-  priceQuery: string | null;
-}
+import type { DisplayPool, Peg } from "./types";
+import { Chain, Coins, WarningType } from "./types";
 
 const Bitcoin: Peg = {
   coin: Coins.Bitcoin,
@@ -130,24 +72,6 @@ const Euro: Peg = {
   decimals: 0,
   priceQuery: "celo-euro",
 };
-
-export enum Chain {
-  Celo,
-  Ethereum,
-  Polygon,
-  Solana,
-  Avax,
-  Terra,
-}
-
-export interface DisplayPool {
-  name: string;
-  chain: Chain;
-  peg: Peg;
-  pool: IExchange;
-  gauge: IGauge | null;
-  warningType?: WarningType;
-}
 
 function lp(chainId: ChainId, address: string, name: string): Token {
   return new Token({
