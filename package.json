@@ -4,7 +4,7 @@
   "description": "Configuration for the Mobius protocol",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/DahliaLabs/mobius-config-registry.git"
+    "url": "git+ssh://git@github.com/mobiusAMM/mobius-config-registry.git"
   },
   "keywords": [
     "celo",
@@ -81,5 +81,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "homepage": "https://github.com/DahliaLabs/mobius-config-registry#readme"
+  "homepage": "https://github.com/MobiusAmm/mobius-config-registry#readme"
 }
