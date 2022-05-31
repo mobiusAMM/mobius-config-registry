@@ -9,7 +9,7 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
-    name: Build and publish pinnata-config
+    name: Build and publish mobius-config
     steps:
       - uses: actions/checkout@v3
       - name: Setup Node
