@@ -473,6 +473,31 @@ export const StablePools: { [K in ChainId]: DisplayPool[] } = {
         additionalRewards: [],
       },
     },
+    {
+      name: "Poof cUSD V1 [DISABLED]",
+      chain: Chain.Celo,
+      peg: Dollar,
+      pool: {
+        address: "0x81B6a3d9f725AB5d706d9e552b128bC5bB0B58a1".toLowerCase(),
+        lpToken: lp(
+          ChainId.Mainnet,
+          "0x57f008172cF89b972db3db7dD032e66BE4AF1A8c".toLowerCase(),
+          "Mobius pUSD Meta LP"
+        ),
+        tokens: [
+          PUSD1[ChainId.Mainnet],
+          lp(
+            ChainId.Mainnet,
+            "0xd7Bf6946b740930c60131044bD2F08787e1DdBd4".toLowerCase(),
+            "Mobius cUSD/cUSDC LP"
+          ),
+        ],
+      },
+      gauge: {
+        address: "0x1250D6dd3B51D20c14a8ECb10CC2dd713967767e".toLowerCase(),
+        additionalRewards: [],
+      },
+    },
   ],
   [ChainId.Alfajores]: [],
   [ChainId.Baklava]: [],
