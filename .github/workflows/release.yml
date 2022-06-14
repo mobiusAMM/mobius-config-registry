@@ -12,23 +12,7 @@ jobs:
     name: Build and publish mobius-config
     steps:
       - uses: actions/checkout@v3
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          always-auth: true
-          node-version: 14.x
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
-      - name: Yarn Cache
-        uses: actions/cache@v3
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-modules-
-      - name: Install Yarn dependencies
-        run: yarn install
+      - uses: ./.github/actions/yarn
       - run: yarn build
       - run: |
           echo 'npmAuthToken: "${NPM_AUTH_TOKEN}"' >> .yarnrc.yml

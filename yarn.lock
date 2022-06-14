@@ -187,6 +187,7 @@ __metadata:
   dependencies:
     "@dahlia-labs/celo-contrib": ^0.5.4
     "@dahlia-labs/celo-tokens": ^0.5.4
+    "@dahlia-labs/stableswap-sdk": ^0.5.5
     "@dahlia-labs/token-utils": ^0.5.4
     "@ethersproject/abi": ^5.6.3
     "@ethersproject/address": ^5.6.1
@@ -225,6 +226,21 @@ __metadata:
     typescript: 4.7.3
   languageName: unknown
   linkType: soft
+
+"@dahlia-labs/stableswap-sdk@npm:^0.5.5":
+  version: 0.5.5
+  resolution: "@dahlia-labs/stableswap-sdk@npm:0.5.5"
+  dependencies:
+    "@dahlia-labs/token-utils": ^0.5.4
+    "@saberhq/tsconfig": ^1.13.28
+    lodash.mapvalues: ^4.6.0
+    tslib: ^2.4.0
+  peerDependencies:
+    bn.js: ">=5"
+    jsbi: ^3 || ^4
+  checksum: 61c8230d97ff5f6e03f0c2a767cff985870ae8a2c661683ec6da49b6493b7f12e1350586e83ad28f5d4a9c67301806e1653ae7d720899e58df7a832c28b952d1
+  languageName: node
+  linkType: hard
 
 "@dahlia-labs/token-utils@npm:^0.5.4":
   version: 0.5.4

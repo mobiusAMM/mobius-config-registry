@@ -1,5 +1,5 @@
-import type { Percent, Token, TokenAmount } from "@dahlia-labs/token-utils";
-import type JSBI from "jsbi";
+import type { IExchange } from "@dahlia-labs/stableswap-sdk";
+import type { Percent, TokenAmount } from "@dahlia-labs/token-utils";
 
 export type Fees = {
   trade: Percent;
@@ -7,25 +7,6 @@ export type Fees = {
   deposit: Percent;
   withdraw: Percent;
 };
-
-/**
- * Static definition of an exchange.
- */
-export interface IExchange {
-  address: string;
-  lpToken: Token;
-  tokens: readonly [Token, Token];
-}
-
-/**
- * Info loaded from the exchange. This is used by the calculator.
- */
-export interface IExchangeInfo {
-  ampFactor: JSBI;
-  fees: Fees;
-  lpTotalSupply: TokenAmount;
-  reserves: readonly [TokenAmount, TokenAmount];
-}
 
 export interface IGauge {
   address: string;
