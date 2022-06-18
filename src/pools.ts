@@ -29,7 +29,6 @@ import {
   WETH1,
 } from "@dahlia-labs/celo-tokens";
 import { Token, TokenAmount } from "@dahlia-labs/token-utils";
-import BigNumber from "bignumber.js";
 
 import type { DisplayPool, Peg } from "./types";
 import { Chain, Coins, WarningType } from "./types";
@@ -83,11 +82,6 @@ function lp(chainId: ChainId, address: string, name: string): Token {
     name,
   });
 }
-
-const weeklyEmissionToSeconds = (n: number) => {
-  const yearlyEmission = new BigNumber(`${n}e+18`).dividedBy(7 * 24 * 60 * 60);
-  return yearlyEmission.toFixed(0);
-};
 
 export const StablePools: { [K in ChainId]: DisplayPool[] } = {
   [ChainId.Mainnet]: [
