@@ -19,6 +19,7 @@ import {
   PUSDC1,
   USDC,
   USDC1,
+  USDCet,
   USDCM,
   USDTM,
   UST,
@@ -91,6 +92,24 @@ const weeklyEmissionToSeconds = (n: number) => {
 export const StablePools: { [K in ChainId]: DisplayPool[] } = {
   [ChainId.Mainnet]: [
     {
+      name: "USDC (Portal)",
+      chain: Chain.Ethereum,
+      peg: Dollar,
+      pool: {
+        address: "0xC0BA93D4aaf90d39924402162EE4a213300d1d60".toLowerCase(),
+        lpToken: lp(
+          ChainId.Mainnet,
+          "0xE10FD4788A76d19bA0110b1BfDa5E13D35ED4359".toLowerCase(),
+          "Mobius cUSD/USDCet LP"
+        ),
+        tokens: [CUSD[ChainId.Mainnet], USDCet[ChainId.Mainnet]],
+      },
+      gauge: {
+        address: "0x7ed927E685d7196Ff2e7Bc48c5cB5e8af88c9332".toLowerCase(),
+        additionalRewards: [],
+      },
+    },
+    {
       name: "UST (Allbridge)",
       chain: Chain.Terra,
       peg: Dollar,
@@ -105,9 +124,7 @@ export const StablePools: { [K in ChainId]: DisplayPool[] } = {
       },
       gauge: {
         address: "0x107F94409746E8c8E6eFF139A100D17D9ca7FdfE".toLowerCase(),
-        additionalRewards: [
-          new TokenAmount(CELO[ChainId.Mainnet], weeklyEmissionToSeconds(2268)),
-        ],
+        additionalRewards: [],
       },
     },
     {
@@ -143,12 +160,7 @@ export const StablePools: { [K in ChainId]: DisplayPool[] } = {
       },
       gauge: {
         address: "0xc96AeeaFF32129da934149F6134Aa7bf291a754E".toLowerCase(),
-        additionalRewards: [
-          new TokenAmount(
-            CELO[ChainId.Mainnet],
-            weeklyEmissionToSeconds(11088)
-          ),
-        ],
+        additionalRewards: [],
       },
     },
     {
@@ -166,9 +178,7 @@ export const StablePools: { [K in ChainId]: DisplayPool[] } = {
       },
       gauge: {
         address: "0xE1f9D952EecC07cfEFa69df9fBB0cEF260957119".toLowerCase(),
-        additionalRewards: [
-          new TokenAmount(CELO[ChainId.Mainnet], weeklyEmissionToSeconds(3780)),
-        ],
+        additionalRewards: [],
       },
     },
     {
@@ -340,9 +350,7 @@ export const StablePools: { [K in ChainId]: DisplayPool[] } = {
       },
       gauge: {
         address: "0x27D9Bfa5F864862BeDC23cFab7e00b6b94488CC6".toLowerCase(),
-        additionalRewards: [
-          new TokenAmount(CELO[ChainId.Mainnet], weeklyEmissionToSeconds(3780)),
-        ],
+        additionalRewards: [],
       },
     },
     {
