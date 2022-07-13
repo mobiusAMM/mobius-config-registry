@@ -17,6 +17,7 @@ import {
   PUSD1,
   PUSDC,
   PUSDC1,
+  STCELO,
   USDC,
   USDC1,
   USDCet,
@@ -102,6 +103,21 @@ export const StablePools: { [K in ChainId]: DisplayPool[] } = {
         address: "0x7ed927E685d7196Ff2e7Bc48c5cB5e8af88c9332".toLowerCase(),
         additionalRewards: [],
       },
+    },
+    {
+      name: "Staked CELO",
+      chain: Chain.Celo,
+      peg: Celo,
+      pool: {
+        address: "0x41d0d2b092b9edf66b6c2e64f6917879afcd9c21".toLowerCase(),
+        lpToken: lp(
+          ChainId.Mainnet,
+          "0x07bC5609b5b16551a99B9De4343457954b718013".toLowerCase(),
+          "Mobius CELO/stCELO LP"
+        ),
+        tokens: [CELO[ChainId.Mainnet], STCELO[ChainId.Mainnet]],
+      },
+      gauge: null,
     },
     {
       name: "UST (Allbridge)",
