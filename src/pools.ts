@@ -109,10 +109,10 @@ export const StablePools: { [K in ChainId]: DisplayPool[] } = {
       chain: Chain.Celo,
       peg: Celo,
       pool: {
-        address: "0x41d0d2b092b9edf66b6c2e64f6917879afcd9c21".toLowerCase(),
+        address: "0xEBf0536356256f8FF2a5Eb6C65800839801d8B95".toLowerCase(),
         lpToken: lp(
           ChainId.Mainnet,
-          "0x07bC5609b5b16551a99B9De4343457954b718013".toLowerCase(),
+          "0x4730ff6bC3008a40cf74D660D3f20d5b51646dA3".toLowerCase(),
           "Mobius CELO/stCELO LP"
         ),
         tokens: [CELO[ChainId.Mainnet], STCELO[ChainId.Mainnet]],
