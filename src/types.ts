@@ -31,7 +31,8 @@ export enum Chain {
 }
 
 export enum WarningType {
-  POOF = "poof",
+  POOF,
+  STCELO,
 }
 
 export interface DisplayPool {

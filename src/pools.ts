@@ -118,6 +118,7 @@ export const StablePools: { [K in ChainId]: DisplayPool[] } = {
         tokens: [CELO[ChainId.Mainnet], STCELO[ChainId.Mainnet]],
       },
       gauge: null,
+      warningType: WarningType.STCELO,
     },
     {
       name: "UST (Allbridge)",
