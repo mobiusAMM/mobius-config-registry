@@ -517,6 +517,21 @@ export const StablePools: { [K in ChainId]: DisplayPool[] } = {
         additionalRewards: [],
       },
     },
+    {
+      name: "cUSD (Mento 1:1 Pool)",
+      chain: Chain.Ethereum,
+      peg: Dollar,
+      pool: {
+        address: "0xFa3df877F98ac5ecd87456a7AcCaa948462412f0".toLowerCase(),
+        lpToken: lp(
+          ChainId.Mainnet,
+          "0x552b9AA0eEe500c60f09456e49FBc1096322714C".toLowerCase(),
+          "Mobius cUSD/USDCet LP"
+        ),
+        tokens: [CUSD[ChainId.Mainnet], USDCet[ChainId.Mainnet]],
+      },
+      gauge: null,
+    },
   ],
   [ChainId.Alfajores]: [],
   [ChainId.Baklava]: [],

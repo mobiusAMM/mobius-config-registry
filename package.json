@@ -1,6 +1,6 @@
 {
   "name": "@dahlia-labs/mobius-config-registry",
-  "version": "0.0.11",
+  "version": "0.0.15",
   "description": "Configuration for the Mobius protocol",
   "repository": {
     "type": "git",
@@ -39,7 +39,7 @@
   ],
   "dependencies": {
     "@dahlia-labs/celo-contrib": "^0.5.7",
-    "@dahlia-labs/celo-tokens": "^0.5.9",
+    "@dahlia-labs/celo-tokens": "^0.5.10",
     "@dahlia-labs/stableswap-sdk": "^0.5.7",
     "@dahlia-labs/token-utils": "^0.5.7",
     "@ethersproject/abi": "^5.6.3",
