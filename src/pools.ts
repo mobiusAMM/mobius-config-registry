@@ -297,7 +297,7 @@ export const StablePools: { [K in ChainId]: DisplayPool[] } = {
           "0xAfFD8d6b5e5A0e25034DD3D075532F9CE01C305c".toLowerCase(),
           "Mobius cUSD/pCELO LP"
         ),
-        tokens: [CUSD[ChainId.Mainnet], PCELO[ChainId.Mainnet]],
+        tokens: [CELO[ChainId.Mainnet], PCELO[ChainId.Mainnet]],
       },
       gauge: {
         address: "0xD0d57a6689188F854F996BEAE0Cb1949FDB5FF86".toLowerCase(),
