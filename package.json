@@ -61,7 +61,6 @@
     "tiny-invariant": "^1.2.0"
   },
   "scripts": {
-    "typechain": "typechain --target=ethers-v5 'src/abis/*.json' --out-dir src/generated/",
     "build": "tsc && tsc --project tsconfig.cjs.json",
     "clean": "rm -fr dist/",
     "typecheck": "tsc --project tsconfig.cjs.json",
