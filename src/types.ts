@@ -1,25 +1,25 @@
 import type { IExchange } from "@dahlia-labs/stableswap-sdk";
 import type { Percent, TokenAmount } from "@dahlia-labs/token-utils";
 
-export type Fees = {
-  trade: Percent;
-  admin: Percent;
-  deposit: Percent;
-  withdraw: Percent;
-};
+export type Fees = Readonly<{
+  trade: Readonly<Percent>;
+  admin: Readonly<Percent>;
+  deposit: Readonly<Percent>;
+  withdraw: Readonly<Percent>;
+}>;
 
-export interface IGauge {
+export type IGauge = Readonly<{
   address: string;
-  additionalRewards: TokenAmount[];
-}
+  additionalRewards?: Readonly<TokenAmount>[];
+}>;
 
-export interface Volume {
+export type Volume = Readonly<{
   volume: {
     total: number;
     day: number;
     week: number;
   } | null;
-}
+}>;
 
 export enum Chain {
   Celo,
@@ -35,14 +35,14 @@ export enum WarningType {
   STCELO,
 }
 
-export interface DisplayPool {
+export type DisplayPool = Readonly<{
   name: string;
   chain: Chain;
   peg: Peg;
   pool: IExchange;
   gauge: IGauge | null;
   warningType?: WarningType;
-}
+}>;
 
 export enum Coins {
   Bitcoin,
@@ -52,10 +52,10 @@ export enum Coins {
   Eur,
 }
 
-export interface Peg {
+export type Peg = Readonly<{
   coin: Coins;
   symbol: string;
   position: "before" | "after";
   decimals: number;
   priceQuery: string | null;
-}
+}>;
