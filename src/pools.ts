@@ -12,7 +12,6 @@ import {
   PCELO1,
   PEUR,
   PEUR1,
-  POOF,
   PUSD,
   PUSD1,
   PUSDC,
@@ -29,7 +28,7 @@ import {
   WETH,
   WETH1,
 } from "@dahlia-labs/celo-tokens";
-import { Token, TokenAmount } from "@dahlia-labs/token-utils";
+import { Token } from "@dahlia-labs/token-utils";
 
 import type { DisplayPool, Peg } from "./types";
 import { Chain, Coins, WarningType } from "./types";
@@ -84,7 +83,9 @@ function lp(chainId: ChainId, address: string, name: string): Token {
   });
 }
 
-export const StablePools: { [K in ChainId]: DisplayPool[] } = {
+export const StablePools: Readonly<{
+  [K in ChainId]: Readonly<DisplayPool[]>;
+}> = {
   [ChainId.Mainnet]: [
     {
       name: "USDC (Portal)",
@@ -101,7 +102,6 @@ export const StablePools: { [K in ChainId]: DisplayPool[] } = {
       },
       gauge: {
         address: "0x7ed927E685d7196Ff2e7Bc48c5cB5e8af88c9332".toLowerCase(),
-        additionalRewards: [],
       },
     },
     {
@@ -135,7 +135,6 @@ export const StablePools: { [K in ChainId]: DisplayPool[] } = {
       },
       gauge: {
         address: "0x107F94409746E8c8E6eFF139A100D17D9ca7FdfE".toLowerCase(),
-        additionalRewards: [],
       },
     },
     {
@@ -153,7 +152,6 @@ export const StablePools: { [K in ChainId]: DisplayPool[] } = {
       },
       gauge: {
         address: "0x487c30CB18AA9Ced435911E2B414e0e85D7E52bB".toLowerCase(),
-        additionalRewards: [],
       },
     },
     {
@@ -171,7 +169,6 @@ export const StablePools: { [K in ChainId]: DisplayPool[] } = {
       },
       gauge: {
         address: "0xc96AeeaFF32129da934149F6134Aa7bf291a754E".toLowerCase(),
-        additionalRewards: [],
       },
     },
     {
@@ -189,7 +186,6 @@ export const StablePools: { [K in ChainId]: DisplayPool[] } = {
       },
       gauge: {
         address: "0xE1f9D952EecC07cfEFa69df9fBB0cEF260957119".toLowerCase(),
-        additionalRewards: [],
       },
     },
     {
@@ -207,7 +203,6 @@ export const StablePools: { [K in ChainId]: DisplayPool[] } = {
       },
       gauge: {
         address: "0x127b524c74C2162Ee4BB2e42d8d2eB9050C0293E".toLowerCase(),
-        additionalRewards: [],
       },
     },
     {
@@ -225,7 +220,6 @@ export const StablePools: { [K in ChainId]: DisplayPool[] } = {
       },
       gauge: {
         address: "0x0A125D473cd3b1968e728DDF7d424c928C09222A".toLowerCase(),
-        additionalRewards: [],
       },
     },
     {
@@ -243,7 +237,6 @@ export const StablePools: { [K in ChainId]: DisplayPool[] } = {
       },
       gauge: {
         address: "0xdAA2ab880b7f3D5697e6F85e63c28b9120AA9E07".toLowerCase(),
-        additionalRewards: [],
       },
     },
     {
@@ -261,7 +254,6 @@ export const StablePools: { [K in ChainId]: DisplayPool[] } = {
       },
       gauge: {
         address: "0xF2ae5c2D2D2eD13dd324C0942163054fc4A3D4d9".toLowerCase(),
-        additionalRewards: [],
       },
     },
     {
@@ -280,9 +272,6 @@ export const StablePools: { [K in ChainId]: DisplayPool[] } = {
       },
       gauge: {
         address: "0xE7195E651Cc47853f0054d85c8ADFc79D532929f".toLowerCase(),
-        additionalRewards: [
-          new TokenAmount(POOF[ChainId.Mainnet], "6283068780000000"),
-        ],
       },
     },
     {
@@ -297,13 +286,10 @@ export const StablePools: { [K in ChainId]: DisplayPool[] } = {
           "0xAfFD8d6b5e5A0e25034DD3D075532F9CE01C305c".toLowerCase(),
           "Mobius cUSD/pCELO LP"
         ),
-        tokens: [CUSD[ChainId.Mainnet], PCELO[ChainId.Mainnet]],
+        tokens: [CELO[ChainId.Mainnet], PCELO[ChainId.Mainnet]],
       },
       gauge: {
         address: "0xD0d57a6689188F854F996BEAE0Cb1949FDB5FF86".toLowerCase(),
-        additionalRewards: [
-          new TokenAmount(POOF[ChainId.Mainnet], "6283068780000000"),
-        ],
       },
     },
     {
@@ -322,9 +308,6 @@ export const StablePools: { [K in ChainId]: DisplayPool[] } = {
       },
       gauge: {
         address: "0xCAEd243de23264Bdd8297c6eECcF320846eee18A".toLowerCase(),
-        additionalRewards: [
-          new TokenAmount(POOF[ChainId.Mainnet], "6283068780000000"),
-        ],
       },
     },
     {
@@ -343,7 +326,6 @@ export const StablePools: { [K in ChainId]: DisplayPool[] } = {
       },
       gauge: {
         address: "0x2459BDb59a3BF6Ab6C412Ac0b220e7CDA1D4ea26".toLowerCase(),
-        additionalRewards: [],
       },
     },
     {
@@ -361,7 +343,6 @@ export const StablePools: { [K in ChainId]: DisplayPool[] } = {
       },
       gauge: {
         address: "0x27D9Bfa5F864862BeDC23cFab7e00b6b94488CC6".toLowerCase(),
-        additionalRewards: [],
       },
     },
     {
@@ -379,7 +360,6 @@ export const StablePools: { [K in ChainId]: DisplayPool[] } = {
       },
       gauge: {
         address: "0x52517feb1Fc6141d5CF6718111C7Cc0FD764fA5d".toLowerCase(),
-        additionalRewards: [],
       },
     },
     {
@@ -397,7 +377,6 @@ export const StablePools: { [K in ChainId]: DisplayPool[] } = {
       },
       gauge: {
         address: "0x1A8938a37093d34581B21bAd2AE7DC1c19150C05".toLowerCase(),
-        additionalRewards: [],
       },
     },
     {
@@ -415,7 +394,6 @@ export const StablePools: { [K in ChainId]: DisplayPool[] } = {
       },
       gauge: {
         address: "0xD38e76E17E66b562B61c149Ca0EE53CEa1145733".toLowerCase(),
-        additionalRewards: [],
       },
     },
     {
@@ -433,7 +411,6 @@ export const StablePools: { [K in ChainId]: DisplayPool[] } = {
       },
       gauge: {
         address: "0xe2d6095685248F38Ae9fef1b360D772b78Ea19D1".toLowerCase(),
-        additionalRewards: [],
       },
     },
     {
@@ -451,7 +428,6 @@ export const StablePools: { [K in ChainId]: DisplayPool[] } = {
       },
       gauge: {
         address: "0xd1B3C05FE24bda6F52e704daf1ACBa8c440d8573".toLowerCase(),
-        additionalRewards: [],
       },
     },
     {
@@ -470,7 +446,6 @@ export const StablePools: { [K in ChainId]: DisplayPool[] } = {
       },
       gauge: {
         address: "0x5489b2F0A1992b889F47601D71E068Fd15c63f26".toLowerCase(),
-        additionalRewards: [],
       },
     },
     {
@@ -489,7 +464,6 @@ export const StablePools: { [K in ChainId]: DisplayPool[] } = {
       },
       gauge: {
         address: "0xCF34F4ec5DC9E09428A4f4a45475f6277694166c".toLowerCase(),
-        additionalRewards: [],
       },
     },
     {
@@ -514,7 +488,6 @@ export const StablePools: { [K in ChainId]: DisplayPool[] } = {
       },
       gauge: {
         address: "0x1250D6dd3B51D20c14a8ECb10CC2dd713967767e".toLowerCase(),
-        additionalRewards: [],
       },
     },
     {
@@ -532,7 +505,7 @@ export const StablePools: { [K in ChainId]: DisplayPool[] } = {
       },
       gauge: null,
     },
-  ],
+  ] as const,
   [ChainId.Alfajores]: [],
   [ChainId.Baklava]: [],
 };
