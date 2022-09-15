@@ -1,6 +1,6 @@
 {
   "name": "@dahlia-labs/mobius-config-registry",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "Configuration for the Mobius protocol",
   "repository": {
     "type": "git",
