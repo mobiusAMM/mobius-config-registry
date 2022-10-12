@@ -117,7 +117,9 @@ export const StablePools: Readonly<{
         ),
         tokens: [CELO[ChainId.Mainnet], STCELO[ChainId.Mainnet]],
       },
-      gauge: null,
+      gauge: {
+        address: "0x70AE7265545f001cb015399D672B85D8f2CaCA72".toLowerCase(),
+      },
       warningType: WarningType.STCELO,
     },
     {
